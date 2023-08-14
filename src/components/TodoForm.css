@@ -1,0 +1,53 @@
+.form-body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 50%;
+    max-width: 1200px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f1f1f1;
+}
+.header input[type="checkbox"] {
+    transform: translate(-25px, 32px) scale(2);
+}
+.header h2 {
+    color: blue;
+    text-decoration: underline;
+}
+.main-body {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   
+}
+input[type="text"] {
+    width: 90%;
+    border: 1px solid white;
+    padding: 10px;
+    box-shadow: 2px 3px 2px #ddd;
+}
+input[type="date"] {
+    position: absolute;
+    right: 140px;
+    
+}
+.btn {
+    position: absolute;
+    right: 70px;
+}
+.section {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
