@@ -1,0 +1,54 @@
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 10px
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    display: inline-block;
+}
+
+
+
+.todo-title h5 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.todo-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.deadline-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
+.deadline-button button {
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid goldenrod;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.crud-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.todo-icons {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
