@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useRef } from "react"
 
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -9,23 +9,22 @@ import "./TodoList.css"
 
 
 const TodoList = ({ title, deadline, completed, id, }) => {
-
+    const inputRef = useRef()
     const [editBtnClicked, setEditBtnClicked] = useState(false)
     const [editText, setEditText] = useState(title)
     const todayDate = new Date().getDate();
     const deadlineDate = (deadline.split("-")[2]);
     const remainingDays = deadlineDate - todayDate
-    const { actions, todoArray } = useContext(TodoContext)
+    const { actions } = useContext(TodoContext)
 
     const handleEdit = () => {
         setEditBtnClicked(() => !editBtnClicked)
-       
-        
     }
     
-    const saveEditedText = (id, editedTitle) => {
+    const saveEditedText = (editText, id) => {
        setEditBtnClicked(() => !editBtnClicked)
-       actions.onEdit(id, editedTitle)
+       console.log(editText)
+       actions.onEdit(editText,id)
     }
 
     const handleDelete = (id) => {
@@ -45,8 +44,9 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                         checked={completed}
                         onChange={(e) => handleStatus(e.target.checked, id)} />
                     {editBtnClicked ? <input className="edit-input"
-                        value={title}
-                        onChange={(e) => handleEdit(id, e.target.value)}
+                        value={editText}
+                        onChange={(e) => setEditText(e.target.value)}
+                        ref={inputRef}
                         type="text" />
                         : <h5>{title}</h5>}
                 </div>
@@ -58,11 +58,10 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                         <div className="crud-icons">
                             {editBtnClicked ? <DoneOutlineIcon
                                 color="primary"
-                                onClick={() => saveEditedText(id,editText)} /> :
+                                onClick={() => saveEditedText(editText,id)}
+                                 /> :
                                 <EditIcon
                                     color="primary"
-                                    value={editText}
-                                    onChange={(e) => setEditText(e.target.value)}
                                     onClick={() => handleEdit()} />}
                             <DeleteIcon
                                 color="error"

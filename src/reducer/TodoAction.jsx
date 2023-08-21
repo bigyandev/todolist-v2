@@ -14,10 +14,10 @@ const TodoAction = (dispatch) => {
                 payload: { id: id }
             })
         },
-        onEdit: function(id,editedTitle) {
+        onEdit: function(editText, id) {
             dispatch({
                 type: Actions.EDIT_TODO,
-                payload: {id:id, editedTitle: editedTitle}
+                payload: {title: editText, id:id}
             })
         },
         onStatusTodo: function (completed, id) {

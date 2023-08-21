@@ -23,14 +23,21 @@ export const TodoForm = () => {
         else if (!deadline) {
             alert("enter deadline")
             setDeadline(" ")
+
+        }
+        else if(new Date(deadline) < new Date()) {
+             alert("deadline already over ") 
+             setDeadline("") 
         }
         else {
             actions.onSubmit(title, deadline)
             setTitle("")
             setDeadline("")
+            console.log(new Date(deadline) >= new Date())
 
         }
     }
+    //console.log(new Date(deadline))
     return (
         <div className="form-body">
             <div className="container">
