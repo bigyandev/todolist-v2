@@ -39,7 +39,7 @@
     flex-direction: row;
    
 }
-input[type="text"] {
+.title-input {
     width: 95%;
     border: 1px solid white;
     padding: 10px;

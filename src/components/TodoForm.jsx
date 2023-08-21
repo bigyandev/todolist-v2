@@ -41,6 +41,7 @@ export const TodoForm = () => {
                     </div>
                     <div className="main-body">
                         <input type="text"
+                            className="title-input"
                             placeholder="WHAT TO DO?"
                             onChange={(e) => setTitle(e.target.value)}
                             value={title}
