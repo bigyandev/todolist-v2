@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap"
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import TodoContext from "../context/TodoContext";
 import TodoList from "./TodoList";
@@ -26,7 +27,7 @@ export const TodoForm = () => {
 
         }
         else if(new Date(deadline) < new Date()) {
-             alert("deadline already over ") 
+             alert("enter valid deadline") 
              setDeadline("") 
         }
         else {

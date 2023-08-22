@@ -20,11 +20,11 @@ const TodoList = ({ title, deadline, completed, id, }) => {
     const handleEdit = () => {
         setEditBtnClicked(() => !editBtnClicked)
     }
-    
+
     const saveEditedText = (editText, id) => {
-       setEditBtnClicked(() => !editBtnClicked)
-       console.log(editText)
-       actions.onEdit(editText,id)
+        setEditBtnClicked(() => !editBtnClicked)
+        console.log(editText)
+        actions.onEdit(editText, id)
     }
 
     const handleDelete = (id) => {
@@ -48,18 +48,21 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                         onChange={(e) => setEditText(e.target.value)}
                         ref={inputRef}
                         type="text" />
-                        : <h5>{title}</h5>}
+                        : <h5>{title.toUpperCase()}</h5>}
                 </div>
                 <div className="todo-icon">
                     <div className="deadline-button">
-                        <button>{remainingDays > 0 ? remainingDays + " DAY" : "OVER"}</button>
+                        <button
+                            className={remainingDays <= 5 ? "important": "not-important"}>
+                            {remainingDays > 0 ? remainingDays + " DAY" : "OVER"}
+                        </button>
                     </div>
                     <div className="todo-icons">
                         <div className="crud-icons">
                             {editBtnClicked ? <DoneOutlineIcon
                                 color="primary"
-                                onClick={() => saveEditedText(editText,id)}
-                                 /> :
+                                onClick={() => saveEditedText(editText, id)}
+                            /> :
                                 <EditIcon
                                     color="primary"
                                     onClick={() => handleEdit()} />}
@@ -71,8 +74,6 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                             <h6>{deadline}</h6>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </>

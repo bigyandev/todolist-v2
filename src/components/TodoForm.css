@@ -5,10 +5,12 @@
    height: 100vh;
 }
 .container {
-    background-color: #f1f1f1;
+    background-color: #f0f1f3;
     max-width: 1200px;
     min-height: 50%;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px #f0f1f3;
 }
 .form-container {
    
@@ -41,18 +43,22 @@
 }
 .title-input {
     width: 95%;
-    border: 1px solid white;
+    border: 1px solid #f1f1f1;
     padding: 10px;
-    box-shadow: 2px 5px 2px #ddd;
+    height: 70px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 2px #e7e8ea;
 }
 input[type="date"] {
     position: absolute;
-    right: 140px;
+    right: 100px;
     
 }
 .btn {
     position: absolute;
-    right: 70px;
+    right: 35px;
+    border-radius: 0;
+    height: 50%;
 }
 .section {
     width: 90%;
@@ -69,7 +75,10 @@ hr {
  height: 50%;
  width: 100%;
  flex-direction: column;
- gap: 10px;
  margin-top: 15px
 
+}
+.important-todo {
+    background-color: red;
+    color: white;
 }
