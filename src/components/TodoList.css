@@ -5,7 +5,6 @@
     width: 95%;
     height: 60px;
     flex-direction: row;
-    margin-bottom: 10px
 }
 
 input[type="checkbox"] {

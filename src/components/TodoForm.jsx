@@ -3,13 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
+
 import TodoContext from "../context/TodoContext";
 import TodoList from "./TodoList";
 
 import "./TodoForm.css"
-
-
-
 
 export const TodoForm = () => {
     const [select, handleSelect] = useState()
@@ -26,16 +24,15 @@ export const TodoForm = () => {
             setDeadline(" ")
 
         }
-        else if(new Date(deadline) < new Date()) {
-             alert("enter valid deadline") 
-             setDeadline("") 
+        else if (new Date(deadline) < new Date()) {
+            alert("enter valid deadline")
+            setDeadline("")
         }
         else {
             actions.onSubmit(title, deadline)
             setTitle("")
             setDeadline("")
             console.log(new Date(deadline) >= new Date())
-
         }
     }
     //console.log(new Date(deadline))
@@ -54,9 +51,10 @@ export const TodoForm = () => {
                             onChange={(e) => setTitle(e.target.value)}
                             value={title}
                         />
-                        <input type="date"
-                            onChange={(e) => setDeadline((e.target.value))}
-                            value={deadline} />
+                            <input type="date"
+                                name="title"
+                                onChange={(e) => setDeadline((e.target.value))}
+                                value={deadline} />
                         <Button onClick={handleAdd}
                             className="btn" varient="info">ADD</Button>
                     </div>

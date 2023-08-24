@@ -12,17 +12,12 @@ import TodoContext from "./context/TodoContext";
 
 
 function App() {
- 
 const [todoArray, dispatch] = useReducer(reducer, getTodo())
 const actions = TodoAction(dispatch)
-
 
 useEffect(() => {
     localStorage.setItem("todo",JSON.stringify(todoArray))
 },[todoArray])
-
-
-
 
  return (
      <TodoContext.Provider value={{actions,todoArray}}>

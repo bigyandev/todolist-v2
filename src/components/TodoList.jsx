@@ -37,7 +37,6 @@ const TodoList = ({ title, deadline, completed, id, }) => {
         actions.onStatusTodo(completed, id)
     }
     return (
-        <>
             <div className="todo">
                 <div className="todo-title">
                     <input type="checkbox"
@@ -53,8 +52,8 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                 <div className="todo-icon">
                     <div className="deadline-button">
                         <button
-                            className={remainingDays <= 5 ? "important": "not-important"}>
-                            {remainingDays > 0 ? remainingDays + " DAY" : "OVER"}
+                            className={remainingDays > 5 || completed ? "not-important": "important"}>
+                            {completed ? "DONE" : remainingDays > 0 ? remainingDays + " DAY" : "OVER"}
                         </button>
                     </div>
                     <div className="todo-icons">
@@ -76,7 +75,7 @@ const TodoList = ({ title, deadline, completed, id, }) => {
                     </div>
                 </div>
             </div>
-        </>
+        
     )
 
 }

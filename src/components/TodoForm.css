@@ -1,9 +1,10 @@
 .form-body {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .container {
     background-color: #f0f1f3;
     max-width: 1200px;
@@ -12,8 +13,8 @@
     border-radius: 10px;
     box-shadow: 2px 3px 5px #f0f1f3;
 }
+
 .form-container {
-   
     display: flex;
     justify-content: start;
     align-items: center;
@@ -21,64 +22,81 @@
     max-width: 1200px;
     flex-direction: column;
     gap: 20px;
-  
+
 }
+
 .header input[type="checkbox"] {
     transform: translate(-25px, 32px) scale(2);
 }
+
 .header h2 {
     color: blue;
     text-decoration: underline;
-  
+
 }
+
 .main-body {
-    
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-   
+
 }
+
 .title-input {
     width: 95%;
     border: 1px solid #f1f1f1;
     padding: 10px;
     height: 70px;
     border-radius: 5px;
-    box-shadow: 2px 5px 2px #e7e8ea;
+    box-shadow: 0px 0px 20px 5px #e7e8ea;
 }
+
 input[type="date"] {
     position: absolute;
-    right: 100px;
-    
+    right: 115px;
+    bottom: 20px;
+    width: 20px;
+    border: 0px;
+    transform: scale(1.9);
+    outline: 0;
+    color: blue;
 }
+
 .btn {
     position: absolute;
-    right: 35px;
-    border-radius: 0;
+    right: 40px;
     height: 50%;
+    border-radius: 0;
 }
+
 .section {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: flex-end;
 }
+
 hr {
     margin: 10px;
 }
-.todo-container {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 50%;
- width: 100%;
- flex-direction: column;
- margin-top: 15px
 
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px
 }
-.important-todo {
-    background-color: red;
-    color: white;
+
+.hidden-input {
+    display: none;
+}
+
+label {
+    position: absolute;
+    right: 100px;
 }
